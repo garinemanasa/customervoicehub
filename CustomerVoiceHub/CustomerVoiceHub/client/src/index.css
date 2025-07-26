@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(42, 78%, 84%);
+  --foreground: hsl(210, 11%, 15%);
+  --muted: hsl(42, 20%, 93%);
+  --muted-foreground: hsl(210, 11%, 71%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 11%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 11%, 15%);
+  --border: hsl(42, 20%, 82%);
+  --input: hsl(42, 20%, 82%);
+  --primary: hsl(255, 62%, 66%);
+  --primary-foreground: hsl(255, 100%, 99%);
+  --secondary: hsl(207, 89%, 72%);
+  --secondary-foreground: hsl(207, 100%, 8%);
+  --accent: hsl(42, 20%, 93%);
+  --accent-foreground: hsl(210, 11%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --success: hsl(162, 100%, 36%);
+  --success-foreground: hsl(162, 100%, 99%);
+  --avatar-accent: hsl(340, 82%, 73%);
+  --avatar-accent-foreground: hsl(340, 100%, 8%);
+  --ring: hsl(255, 62%, 66%);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(255, 62%, 66%);
+  --primary-foreground: hsl(255, 100%, 99%);
+  --secondary: hsl(207, 89%, 72%);
+  --secondary-foreground: hsl(207, 100%, 8%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --success: hsl(162, 100%, 36%);
+  --success-foreground: hsl(162, 100%, 99%);
+  --avatar-accent: hsl(340, 82%, 73%);
+  --avatar-accent-foreground: hsl(340, 100%, 8%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground transition-colors;
+  }
+  
+  .btn-primary:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground transition-colors;
+  }
+  
+  .btn-secondary:hover {
+    background-color: hsl(var(--secondary) / 0.9);
+  }
+  
+  .btn-success {
+    @apply bg-success text-success-foreground transition-colors;
+  }
+  
+  .btn-success:hover {
+    background-color: hsl(var(--success) / 0.9);
+  }
+  
+  .text-avatar-accent {
+    color: hsl(var(--avatar-accent));
+  }
+  
+  .bg-avatar-accent {
+    background-color: hsl(var(--avatar-accent));
+  }
+  
+  .border-avatar-accent {
+    border-color: hsl(var(--avatar-accent));
+  }
+}
+
+
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
